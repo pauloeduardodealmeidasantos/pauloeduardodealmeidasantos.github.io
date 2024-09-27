@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>montar link whatsapp</title>
+</head>
+<script>
+	function montarLink() {
+		var ddd = document.getElementById("ddd").value;
+		var celular = document.getElementById("celular").value;
+		var montado = document.getElementById("montado");
+		var l = "http://api.whatsapp.com/send?phone=55";
+		l = l.concat(ddd);
+		l = l.concat(celular);
+		console.log(l)
+		montado.href=l;
+	}
+</script>
+<body>
+	<label for="ddd">DDD</label>
+	<input type="text" id="ddd" name="ddd" maxlength="2" onchange="montarLink()">
+	<br/><br/>
+	<label for="celular">Numero</label>
+	<input type="text" id="celular" name="celular" maxlength="9" onchange="montarLink()">
+	<br/><br/>
+	<label for="montado">Link Whatsapp:</label>
+	 <a id="montado" href="Link Whatsapp">Link Whatsapp</a> 
+</body>
+</html>
