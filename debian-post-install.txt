@@ -1,0 +1,36 @@
+#apt update
+apt dist-upgrade
+apt autoremove
+apt install wget htop vim -y
+/sbin/usermod -a -G sudo paulo
+echo "paulo ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+apt purge gdm3
+apt purge aspell at bc dc debian-faq* dictionaries-common dictionaries* doc-debian  eject fdutils  finger foomatic-filters groff hplip info iamerican ibritish ispell ppp pppoe pppoeconf reportbug tasksel tcsh traceroute unzip wamerican
+apt install lightdm -yUDB-
+echo "autologin-user = paulo" >> /etc/lightdm/lightdm.conf
+apt install localepurge
+rm -rf /usr/share/doc/*
+rm -rf /usr/share/man/??
+rm -rf /usr/share/man/??_*
+sudo apt install cinnamon-core
+sudo apt purge iagno lightsoff four-in-a-row gnome-robots pegsolitaire gnome-2048 hitori gnome-klotski gnome-mines gnome-mahjongg gnome-sudoku quadrapassel swell-foop gnome-tetravex gnome-taquin aisleriot gnome-chess five-or-more gnome-nibbles tali
+sed -i s,MODULES=most,MODULES=dep,g /etc/initramfs-tools/initramfs.conf
+echo "COMPRESS=xz" > /etc/initramfs-tools/conf.d/compress
+update-initramfs -u
+#ediat grub
+# GRUB-TIMEOUT = 0
+update-grub2
+apt install geany
+apt purge firefox-esr
+sudo apt install zram-tools
+echo -e "ALGO=zstd\nPERCENT=10" | sudo tee -a /etc/default/zramswap
+sudo service zramswap reload
+# SWAPINESS
+# /etc/sysctl.conf ; vm.swappiness=90
+# instalar o repositório do dbeaver
+# instalar o repositório do firefox
+# importar chaves ssh
+# baixar o vimrc
+# importar o profiile do firefox
+# instalar o repo virtualbox
+# instalar o repo dbeaver
